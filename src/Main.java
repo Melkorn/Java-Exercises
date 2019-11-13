@@ -1,4 +1,5 @@
 import java.security.spec.RSAOtherPrimeInfo;
+import java.util.Scanner;
 
 public class Main{
     public static boolean ifPalindrome(int number){
@@ -244,6 +245,106 @@ public class Main{
             } else return false;
         }
 
+        public static int getLargestPrime(int number) {
+            if (number > 1) {
+                int i = 2;
+                while (i < number) {
+                    if (number % i == 0) {
+                        number = number / i;
+                    } else i++;
+                }
+                return number;
+            }
+            return -1;
+        }
+
+        public static void inputThenPrintSumAndAverage(){
+            Scanner scaner = new Scanner(System.in);
+            int sum = 0;
+            double avg = 0;
+            long aVg =0;
+            int count =0;
+            boolean a = true;
+            while (a == true) {
+
+
+                boolean isAnInt = scaner.hasNextInt();
+
+                if(isAnInt) {
+
+                    sum = sum + scaner.nextInt();
+                    count++;
+                }
+                else{
+                    avg = (double)sum/(double)count;
+                    aVg = Math.round(avg);
+                    System.out.println("SUM = " + sum + " " + "AVG = " + aVg);
+                    a = false;
+                    scaner.close();
+                }
+            }
+        }
+
+        public static int getBucketCount(double width, double height, double areaPerBucket, int extraBuckets){
+            if(width <= 0 || height <= 0 || areaPerBucket <= 0 || extraBuckets < 0){
+                return -1;
+            }else{
+              double bucket = width*height/areaPerBucket;
+                int buckets = (int)Math.round(bucket);
+                if((double)buckets < bucket){
+                    buckets ++;
+                    if(buckets <= extraBuckets){
+                        return 0;
+                    }else{
+                        return (buckets - extraBuckets);
+                    }
+                } else{
+                    if(buckets <= extraBuckets){
+                        return 0;
+                    }else{
+                        return (buckets - extraBuckets);
+                    }
+                }
+
+            }
+
+        }
+
+    public static int getBucketCount(double width, double height, double areaPerBucket){
+        if(width <= 0 || height <= 0 || areaPerBucket <= 0){
+            return -1;
+        }else{
+            double bucket = width*height/areaPerBucket;
+            int buckets = (int)Math.round(bucket);
+            if((double)buckets < bucket){
+                buckets ++;
+                return buckets;
+
+            } else{
+                return buckets;
+            }
+
+        }
+
+    }
+
+    public static int getBucketCount(double area, double areaPerBucket){
+        if(area <= 0 || areaPerBucket <= 0){
+            return -1;
+        }else{
+            double bucket = area/areaPerBucket;
+            int buckets = (int)Math.round(bucket);
+            if((double)buckets < bucket){
+                buckets ++;
+                return buckets;
+
+            } else{
+                return buckets;
+            }
+
+        }
+
+    }
 
     public static void main(String[] args){
         //getEvenDigitSum(2);
@@ -254,5 +355,48 @@ public class Main{
         //System.out.println(reverse(-2));
         //numberToWords(10000);
         //System.out.println(canPack(3, 1, 16));
+        //System.out.println(getLargestPrime(8));
+        //inputThenPrintSumAndAverage();
+        //System.out.println( getBucketCount(2,3));
+        //System.out.println( getBucketCount(2.4,1.4,2.1,1));
+        //System.out.println(getBucketCount(2.6,7.3,1.6));
+
+        /* Account San = new Account();
+        San.deposite(41.23d);
+        San.deposite(2.00d);
+        San.deposite(0.41d);
+
+        San.withdraw(40.01d);
+
+         Account Mat = new Account("12321312", "Matt", "123123123","wewewewe@fwert.com", 1000.00);
+         Mat.deposite(213.00d);
+         Mat.withdraw(321d);
+
+         */
+        /*
+        VipCustomer vip1 = new VipCustomer("hans", 500000, "hans@email.com");
+        System.out.println(vip1.getCreditLimit());
+        System.out.println(vip1.getEmailAdress());
+        System.out.println(vip1.getName());
+
+        VipCustomer vip2 = new VipCustomer();
+        System.out.println(vip2.getName());
+        System.out.println(vip2.getEmailAdress());
+        System.out.println(vip2.getCreditLimit());
+
+        VipCustomer vip3 = new VipCustomer("Mark", 3000);
+        System.out.println(vip3.getCreditLimit());
+        System.out.println(vip3.getEmailAdress());
+        System.out.println(vip3.getName());
+        */
+
+        Wall big = new Wall(-2, 41);
+        System.out.println(big.getHeight());
+        System.out.println(big.getWidth());
+
+        Wall wall2 = new Wall();
+        System.out.println(wall2.getWidth());
+        System.out.println(wall2.getHeight());
+
     }
 }
