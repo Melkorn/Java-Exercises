@@ -27,15 +27,18 @@ public class Point {
         this.y = y;
     }
 
-    /* public double distance(){
-
+    public double distance(){
+        return (Math.sqrt(x*x+y*y));
     }
 
     public double distance(int x, int y){
-
+        return (Math.sqrt((this.x - x)*(this.x-x)+(this.y - y)*(this.y-y)));
     }
 
-    public double distance(Point){
+    public double distance(Point duo){
+        int yy = duo.getY();
+        int xx = duo.getX();
+        return (Math.sqrt((this.x - xx)*(this.x - xx) +(this.y - yy)*(this.y - yy)));
 
-    }*/
+    }
 }

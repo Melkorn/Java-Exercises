@@ -390,13 +390,18 @@ public class Main{
         System.out.println(vip3.getName());
         */
 
-        Wall big = new Wall(-2, 41);
+       /* Wall big = new Wall(-2, 41);
         System.out.println(big.getHeight());
         System.out.println(big.getWidth());
 
         Wall wall2 = new Wall();
         System.out.println(wall2.getWidth());
-        System.out.println(wall2.getHeight());
+        System.out.println(wall2.getHeight()); */
+
+       Point uno = new Point(6,8);
+       Point duo = new Point(2, 1);
+
+        System.out.println(uno.distance(duo));
 
     }
 }
