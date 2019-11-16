@@ -398,10 +398,19 @@ public class Main{
         System.out.println(wall2.getWidth());
         System.out.println(wall2.getHeight()); */
 
-       Point uno = new Point(6,8);
-       Point duo = new Point(2, 1);
+      // Point uno = new Point(6,8);
+      // Point duo = new Point(2, 1);
 
-        System.out.println(uno.distance(duo));
+        //System.out.println(uno.distance(duo));
+
+        Carpet carpet = new Carpet(3.5);
+        Floor floor = new Floor(2.75, 4.0);
+        Calculator calculator = new Calculator(floor, carpet);
+        System.out.println("total= " + calculator.getTotalCost());
+        carpet = new Carpet(1.5);
+        floor = new Floor(5.4, 4.5);
+        calculator = new Calculator(floor, carpet);
+        System.out.println("total= " + calculator.getTotalCost());
 
     }
 }
