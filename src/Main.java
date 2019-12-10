@@ -403,14 +403,21 @@ public class Main{
 
         //System.out.println(uno.distance(duo));
 
-        Carpet carpet = new Carpet(3.5);
+        /*Carpet carpet = new Carpet(3.5);
         Floor floor = new Floor(2.75, 4.0);
         Calculator calculator = new Calculator(floor, carpet);
         System.out.println("total= " + calculator.getTotalCost());
         carpet = new Carpet(1.5);
         floor = new Floor(5.4, 4.5);
         calculator = new Calculator(floor, carpet);
-        System.out.println("total= " + calculator.getTotalCost());
+        System.out.println("total= " + calculator.getTotalCost());*/
+
+        Printer HP = new Printer(75, 0, true);
+        System.out.println(HP.getTonerLevel());
+        HP.fillTheToner();
+        System.out.println(HP.getTonerLevel());
+        HP.printPage(25);
+        System.out.println(HP.getTonerLevel());
 
     }
 }
