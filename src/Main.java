@@ -1,47 +1,46 @@
-import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Scanner;
 
 public class Main{
     public static boolean ifPalindrome(int number){
-       int reverse = 0;
-       int a = number;
-       int b =0;
-       int c = 0;
-       if(a>=0){
-       do{
+        int reverse = 0;
+        int a = number;
+        int b =0;
+        int c = 0;
+        if(a>=0){
+            do{
 
-           c = a%10;
-
-
-           b = b*10 + c;
-           a = a / 10;
+                c = a%10;
 
 
-       }
-        while(a>0);}
-       else{
-           do{
-
-               c = a%10;
-               System.out.println(c + "c");
+                b = b*10 + c;
+                a = a / 10;
 
 
-               b = (b*10 + c);
-               a = a / 10;
-               System.out.println(b +"b");
+            }
+            while(a>0);}
+        else{
+            do{
+
+                c = a%10;
+                System.out.println(c + "c");
 
 
-           }
-           while(a<0);
-       }
+                b = (b*10 + c);
+                a = a / 10;
+                System.out.println(b +"b");
+
+
+            }
+            while(a<0);
+        }
         System.out.println(b);
-      reverse = b;
+        reverse = b;
         if(number == reverse) {
             return true;
         }
         else{
             return false;
-            }
+        }
 
     }
     public static int sumFirstAndLastDigit(int number) {
@@ -238,77 +237,77 @@ public class Main{
     public static boolean canPack(int bigCount, int smallCount, int goal) {
         if (bigCount < 0 || smallCount < 0 || goal < 0) {
             return false;
-            } else if(smallCount >= goal){
+        } else if(smallCount >= goal){
             return true;
-            }else if(bigCount * 5 + smallCount >= goal && (goal%5) <= smallCount) {
+        }else if(bigCount * 5 + smallCount >= goal && (goal%5) <= smallCount) {
             return true;
-            } else return false;
-        }
+        } else return false;
+    }
 
-        public static int getLargestPrime(int number) {
-            if (number > 1) {
-                int i = 2;
-                while (i < number) {
-                    if (number % i == 0) {
-                        number = number / i;
-                    } else i++;
-                }
-                return number;
+    public static int getLargestPrime(int number) {
+        if (number > 1) {
+            int i = 2;
+            while (i < number) {
+                if (number % i == 0) {
+                    number = number / i;
+                } else i++;
             }
+            return number;
+        }
+        return -1;
+    }
+
+    public static void inputThenPrintSumAndAverage(){
+        Scanner scaner = new Scanner(System.in);
+        int sum = 0;
+        double avg = 0;
+        long aVg =0;
+        int count =0;
+        boolean a = true;
+        while (a == true) {
+
+
+            boolean isAnInt = scaner.hasNextInt();
+
+            if(isAnInt) {
+
+                sum = sum + scaner.nextInt();
+                count++;
+            }
+            else{
+                avg = (double)sum/(double)count;
+                aVg = Math.round(avg);
+                System.out.println("SUM = " + sum + " " + "AVG = " + aVg);
+                a = false;
+                scaner.close();
+            }
+        }
+    }
+
+    public static int getBucketCount(double width, double height, double areaPerBucket, int extraBuckets){
+        if(width <= 0 || height <= 0 || areaPerBucket <= 0 || extraBuckets < 0){
             return -1;
-        }
-
-        public static void inputThenPrintSumAndAverage(){
-            Scanner scaner = new Scanner(System.in);
-            int sum = 0;
-            double avg = 0;
-            long aVg =0;
-            int count =0;
-            boolean a = true;
-            while (a == true) {
-
-
-                boolean isAnInt = scaner.hasNextInt();
-
-                if(isAnInt) {
-
-                    sum = sum + scaner.nextInt();
-                    count++;
+        }else{
+            double bucket = width*height/areaPerBucket;
+            int buckets = (int)Math.round(bucket);
+            if((double)buckets < bucket){
+                buckets ++;
+                if(buckets <= extraBuckets){
+                    return 0;
+                }else{
+                    return (buckets - extraBuckets);
                 }
-                else{
-                    avg = (double)sum/(double)count;
-                    aVg = Math.round(avg);
-                    System.out.println("SUM = " + sum + " " + "AVG = " + aVg);
-                    a = false;
-                    scaner.close();
+            } else{
+                if(buckets <= extraBuckets){
+                    return 0;
+                }else{
+                    return (buckets - extraBuckets);
                 }
             }
-        }
-
-        public static int getBucketCount(double width, double height, double areaPerBucket, int extraBuckets){
-            if(width <= 0 || height <= 0 || areaPerBucket <= 0 || extraBuckets < 0){
-                return -1;
-            }else{
-              double bucket = width*height/areaPerBucket;
-                int buckets = (int)Math.round(bucket);
-                if((double)buckets < bucket){
-                    buckets ++;
-                    if(buckets <= extraBuckets){
-                        return 0;
-                    }else{
-                        return (buckets - extraBuckets);
-                    }
-                } else{
-                    if(buckets <= extraBuckets){
-                        return 0;
-                    }else{
-                        return (buckets - extraBuckets);
-                    }
-                }
-
-            }
 
         }
+
+    }
 
     public static int getBucketCount(double width, double height, double areaPerBucket){
         if(width <= 0 || height <= 0 || areaPerBucket <= 0){
@@ -345,13 +344,13 @@ public class Main{
         }
 
     }
-
+    private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args){
         //getEvenDigitSum(2);
-            //hasSharedDigit(12, 23);
+        //hasSharedDigit(12, 23);
         //getGreatestCommonDivisor(81, 153);
 
-       // System.out.println(isPerfectNumber(6));
+        // System.out.println(isPerfectNumber(6));
         //System.out.println(reverse(-2));
         //numberToWords(10000);
         //System.out.println(canPack(3, 1, 16));
@@ -398,8 +397,8 @@ public class Main{
         System.out.println(wall2.getWidth());
         System.out.println(wall2.getHeight()); */
 
-      // Point uno = new Point(6,8);
-      // Point duo = new Point(2, 1);
+        // Point uno = new Point(6,8);
+        // Point duo = new Point(2, 1);
 
         //System.out.println(uno.distance(duo));
 
@@ -412,12 +411,67 @@ public class Main{
         calculator = new Calculator(floor, carpet);
         System.out.println("total= " + calculator.getTotalCost());*/
 
-        Printer HP = new Printer(75, 0, true);
+       /* Printer HP = new Printer(75, 0, true);
         System.out.println(HP.getTonerLevel());
         HP.fillTheToner();
         System.out.println(HP.getTonerLevel());
         HP.printPage(25);
         System.out.println(HP.getTonerLevel());
+                                                */
+
+        int[] myIntegers = getIntegers(5);
+        int[] sorted = sortIntegers(myIntegers);
+        printArray(sorted);
 
     }
+    public static int[] getIntegers(int capacity){
+        int[] array = new int[capacity];
+        System.out.println("Enter " + capacity + "integers values: \r");
+        for(int i = 0; i < array.length; i++){
+            array[i] = scanner.nextInt();
+        }
+        return array;
+    }
+
+    public static void printArray(int [] array){
+        for(int i = 0; i < array.length; i++){
+            System.out.println("Element " + i + " contents " + array[i]);
+        }
+    }
+
+    public static int[] sortIntegers(int [] array){
+        int[] sortedArray = new int[array.length];
+        for(int i = 0; i < array.length; i++){
+            sortedArray[i]=array[i];
+        }
+        int a = 0;
+        int b = 0;
+        boolean c = true;
+        while(c){
+            c = false;
+            for(int i = 0; i < array.length -1 ; i++){
+                if(sortedArray[i] < sortedArray[i+1]){
+                    b = sortedArray[i];
+                    sortedArray[i] = sortedArray[i+1];
+                    sortedArray[i+1] = b;
+                    c = true;
+                }
+            }
+        }
+        return sortedArray;
+    }
+//test
 }
+// Create a program using arrays that sorts a list of integers in descending order.
+// Descending order is highest value to lowest.
+// In other words if the array had the values in it 106, 26, 81, 5, 15 your program should
+// ultimately have an array with 106,81,26, 15, 5 in it.
+// Set up the program so that the numbers to sort are read in from the keyboard.
+// Implement the following methods - getIntegers, printArray, and sortIntegers
+// getIntegers returns an array of entered integers from keyboard
+// printArray prints out the contents of the array
+// and sortIntegers should sort the array and return a new array containing the sorted numbers
+// you will have to figure out how to copy the array elements from the passed array into a new
+// array and sort them and return the new sorted array.
+
+
